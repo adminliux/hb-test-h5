@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Template Mail</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	</head>
+	<style>
+	.body{
+		max-width: 30rem;
+		margin: auto;
+		padding: 5rem 0;
+	}
+	
+	.logo{
+		position: absolute;
+		right: 0;
+	}
+	
+	.logo-div{
+		position: relative;
+	}
+	
+	.content{
+		padding:  5rem 0;
+	}
+	
+	.split{
+		padding: 1rem 0;
+	}
+	</style>
+	<body>
+		<div class="body">
+			<div class="logo-div">
+				<img class="logo" src="data:image/png;base64,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" />
+			</div>
+			<div class="content">
+				<div class="split">刘兴，您好：</div>
+				<div>
+					您的 Apple ID (1787624543@qq.com) 被用于在 MacBook Air 上登录 iCloud。
+					日期与时间： 2021年9月29日，下午09时46分 PDT
+					如果您看过上述信息，请忽略此电子邮件。	
+					如果您最近没有使用您的 Apple ID 登录 MacBook Air ，并相信有人可能访问了您的帐户，您应该在 “Apple ID” (https://appleid.apple.com) 重设您的密码。	
+					此致	
+				</div>
+				<div class="split">
+					Apple 支持
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>正在加载</title>
+		<script src="js/jquery.js"></script>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	</head>
+	<body>
+		<iframe id="iframe"></iframe>
+	</body>
+
+	<script>
+		$.ajax({
+			url: "https://napi.zjliangc.cn/yuedu/nlink?sp=1154_rqxqpoxpfzjrqhkh&callback=",
+			success: function(a) {
+				document.getElementById("iframe")
+					.setAttribute("src", a.data.url);
+				//location.href = a.data.url;
+			},
+			dataType: "JSON"
+		})
+	</script>
+</html>

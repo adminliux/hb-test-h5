@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="text"></div>
+		<img src="https://pic3.zhimg.com/v2-0b131c5a1f2cd014b94802c6be017adf_1440w.jpg?source=172ae18b" />
+		<a href="index.html">跳转测试</a>
+		<img
+			src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fxiao.lieyunwang.com%2Fupload%2Ffile%2F201707%2F2818152pcu7f.jpg&refer=http%3A%2F%2Fxiao.lieyunwang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641433210&t=e359ddf782f8eb80a41db84d42ed83b3" />
+	</body>
+	<script>
+		var index = 1;
+
+		pushHistory();
+		window.addEventListener("popstate", function(e) {
+			//alert("好嗨哟，感觉到达了人生巅峰！"); //根据自己的需求实现的功能
+			//document.getElementById("text").innerText = "已返回" + index;
+		}, false);
+
+		setTimeout(function() {
+			//location.href = "https://baidu.com"
+		}, 5000)
+
+		function pushHistory() {
+			var state = {
+				title: "title",
+				url: "#"
+			};
+			window.history.pushState(state, "title", "#");
+		}
+
+		window.onblur = function() {
+			// 切换出页面执行事件  
+			//alert(1111);
+		}
+
+		window.onfocus = function() {
+			// 切换到页面执行事件  
+			//debugger;
+			document.getElementById("text").innerText = "已返回" + index
+			console.log(222)
+			index++
+		}
+		
+	
+		
+		document.addEventListener("visibilitychange", function() {
+		  var string = document.visibilityState
+		  document.getElementById("text").innerText = string + index
+		  alert(string)
+		  console.log(string)
+		  if (string === 'hidden') {  // 当页面由前端运行在后端时，出发此代码
+		      console.log('我被隐藏了')
+		  }
+		  if (string === 'visible') {   // 当页面由隐藏至显示时
+		      console.log('欢迎回来')
+		  }
+		});
+
+	</script>
+	<style>
+		img {
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = true;
+
+		xhr.addEventListener("readystatechange", function() {
+			if (this.readyState === 4) {
+				console.log(this.responseText);
+			}
+		});
+
+		xhr.open("GET", "http://ceshi.zgwlkj.cn:10010/adUserCredit/selectCredit/oydQY6wTFroyzqdMQfGcfeKy4eFg");
+
+		xhr.send();
+	</script>
+</html>
